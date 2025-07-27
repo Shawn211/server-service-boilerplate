@@ -17,3 +17,15 @@
 ✅ 定时任务 - bull
 
 ✅ lint - eslint + prettier
+
+# 部署流程
+
+## 环境准备
+- nodejs
+- docker
+- docker-compose
+
+## 本地部署
+- yarn install
+- docker-compose -f docker-compose.yml up -d
+- yarn local

@@ -44,13 +44,13 @@ export class Mongoose {
 }
 
 export class AWS {
-  @Rule(RuleType.string().required())
+  @Rule(RuleType.string().allow(''))
   awsAccessKeyId!: string;
 
-  @Rule(RuleType.string().required())
+  @Rule(RuleType.string().allow(''))
   awsSecretKey!: string;
 
-  @Rule(RuleType.string().required())
+  @Rule(RuleType.string().allow(''))
   awsRegion!: string;
 }
 
