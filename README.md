@@ -26,6 +26,8 @@
 - docker-compose
 
 ## 本地部署
-- yarn install
-- docker-compose -f docker-compose.yml up -d
-- yarn local
+```bash
+yarn install
+docker-compose -f docker-compose.yml up -d
+yarn local
+```
