@@ -1,21 +1,31 @@
 /* eslint-disable no-process-env */
 import * as fs from 'fs';
 import * as path from 'path';
+import 'dotenv/config';
 import { mongoose } from '@typegoose/typegoose';
+import { Redis } from 'ioredis';
+
 import { Network, NetworkModel } from '../entity/common/network.entity';
 
-require('dotenv').config();
-
 const MONGODB_URI = process.env.MONGODB_URI || '';
+const REDIS_URI = process.env.REDIS_HOST && process.env.REDIS_PORT ? `${process.env.REDIS_HOST}:${process.env.REDIS_PORT}` : '';
+
+async function updateRedisCache(networks: Network[]) {
+  const redis: Redis = new Redis(REDIS_URI);
+  await redis.set('networks:all', JSON.stringify(networks));
+}
 
 async function run() {
   // 1. 读取 networks.json
   const jsonPath = path.resolve(__dirname, './networks.json');
   const networks: Network[] = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
 
-  // 2. 连接数据库
+  // 2. 检查数据库和 redis 连接串
   if (!MONGODB_URI) {
     throw new Error('MONGODB_URI 未设置');
+  }
+  if (!REDIS_URI) {
+    throw new Error('REDIS_HOST REDIS_PORT 未设置');
   }
   await mongoose.connect(MONGODB_URI, {
     user: process.env.MONGODB_USER,
@@ -55,6 +65,12 @@ async function run() {
 
   // 4. 断开连接
   await mongoose.disconnect();
+
+  // 5. 如有变动，刷新 redis 缓存
+  if (insertCount > 0 || updateCount > 0) {
+    await updateRedisCache(networks);
+  }
+
   // eslint-disable-next-line no-console
   console.log(`网络配置已写入数据库，新增: ${insertCount}，更新: ${updateCount}，跳过: ${skipCount}`);
 }
