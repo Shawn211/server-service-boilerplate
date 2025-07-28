@@ -21,7 +21,7 @@
 # 部署流程
 
 ## 环境准备
-- nodejs
+- nodejs v22.17.1
 - docker
 - docker-compose
 

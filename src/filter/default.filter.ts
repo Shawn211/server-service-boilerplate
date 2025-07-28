@@ -10,12 +10,14 @@ export class DefaultErrorFilter {
 
   async catch(err: MidwayHttpError, ctx: Context) {
     const status = err.status;
+    const code = err.code;
 
     /** handle HTTP Error */
     const i18nService = await ctx.requestContext.getAsync(
       i18nServiceBasic.MidwayI18nService
     );
     const statusMessage =
+      i18nService.translate(`error__service_${code}`) ??
       i18nService.translate(`error__http_${status}`) ??
       i18nService.translate('error__common_unknown');
     const shownMessage = `${status}: ${statusMessage}`;

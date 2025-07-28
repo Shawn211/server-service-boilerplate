@@ -11,14 +11,14 @@ export class UserController {
   @Inject()
   service: TokenService;
 
-  @Get('/api/networks')
-  async getList() {
-    return this.service.getNetworks();
+  @Get('/networks')
+  async getNetworks() {
+    return await this.service.getNetworks();
   }
 
-  @Get('/:name')
-  async get() {
-    // const { name } = this.ctx.params;
-    return this.service.getToken();
+  @Get('/list/:chain')
+  async getTokenList() {
+    const { chain } = this.ctx.params;
+    return await this.service.getTokenList(chain);
   }
 }
