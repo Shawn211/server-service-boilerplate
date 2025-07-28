@@ -1,0 +1,224 @@
+[
+    {
+        "chainName": "Ethereum",
+        "chainCode": "eth",
+        "chainId": "1",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "BNB Chain",
+        "chainCode": "bsc",
+        "chainId": "56",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "zkSync Era",
+        "chainCode": "zksync",
+        "chainId": "324",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Polygon",
+        "chainCode": "polygon",
+        "chainId": "137",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000001010"
+    },
+    {
+        "chainName": "Base",
+        "chainCode": "base",
+        "chainId": "8453",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Linea",
+        "chainCode": "linea",
+        "chainId": "59144",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Fantom",
+        "chainCode": "fantom",
+        "chainId": "250",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Avalanche C-Chain",
+        "chainCode": "avax",
+        "chainId": "43114",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Arbitrum One",
+        "chainCode": "arbitrum",
+        "chainId": "42161",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Optimism",
+        "chainCode": "optimism",
+        "chainId": "10",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Moonriver",
+        "chainCode": "moonriver",
+        "chainId": "1285",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Aurora",
+        "chainCode": "aurora",
+        "chainId": "1313161554",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Cronos",
+        "chainCode": "cronos",
+        "chainId": "25",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Harmony",
+        "chainCode": "harmony",
+        "chainId": "1666600000",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Kava",
+        "chainCode": "kava",
+        "chainId": "2222",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Metis Andromeda",
+        "chainCode": "metis",
+        "chainId": "1088",
+        "nativeTokenAddress": "0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000"
+    },
+    {
+        "chainName": "Celo",
+        "chainCode": "celo",
+        "chainId": "42220",
+        "nativeTokenAddress": "0x471EcE3750Da237f93B8E339c536989b8978a438"
+    },
+    {
+        "chainName": "Telos",
+        "chainCode": "telos",
+        "chainId": "40",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Polygon zkEVM",
+        "chainCode": "polygon_zkevm",
+        "chainId": "1101",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Gnosis",
+        "chainCode": "xdai",
+        "chainId": "100",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "opBNB",
+        "chainCode": "opbnb",
+        "chainId": "204",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Mantle",
+        "chainCode": "mantle",
+        "chainId": "5000",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Manta",
+        "chainCode": "manta",
+        "chainId": "169",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Scroll",
+        "chainCode": "scroll",
+        "chainId": "534352",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Blast",
+        "chainCode": "blast",
+        "chainId": "81457",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Mode",
+        "chainCode": "mode",
+        "chainId": "34443",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Rootstock",
+        "chainCode": "rootstock",
+        "chainId": "30",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Sei",
+        "chainCode": "sei",
+        "chainId": "1329",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Gravity",
+        "chainCode": "gravity",
+        "chainId": "1625",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Apechain",
+        "chainCode": "ape",
+        "chainId": "33139",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Sonic",
+        "chainCode": "sonic",
+        "chainId": "146",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Berachain",
+        "chainCode": "bera",
+        "chainId": "80094",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Monad Testnet",
+        "chainCode": "monad ",
+        "chainId": "10143",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "UniChain",
+        "chainCode": "uni",
+        "chainId": "130",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "Flare ",
+        "chainCode": "flare",
+        "chainId": "14",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    },
+    {
+        "chainName": "Swell",
+        "chainCode": "swell",
+        "chainId": "1923",
+        "nativeTokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    },
+    {
+        "chainName": "HyperEVM",
+        "chainCode": "hyperevm",
+        "chainId": "999",
+        "nativeTokenAddress": "0x0000000000000000000000000000000000000000"
+    }
+]

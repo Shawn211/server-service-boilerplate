@@ -31,3 +31,8 @@ yarn install
 docker-compose -f docker-compose.yml up -d
 yarn local
 ```
+
+## OpenOcean 支持网络数据初始化
+```bash
+npx ts-node src/scripts/prepare-networks.ts
+```
