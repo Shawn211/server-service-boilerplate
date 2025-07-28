@@ -11,7 +11,7 @@ export class UserController {
   @Inject()
   service: TokenService;
 
-  @Get('/')
+  @Get('/api/networks')
   async getList() {
     return this.service.getNetworks();
   }
