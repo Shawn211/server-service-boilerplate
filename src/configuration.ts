@@ -18,6 +18,7 @@ import { IMidwayLogger } from '@midwayjs/logger';
 import * as mongoose from '@midwayjs/mongoose';
 import * as redis from '@midwayjs/redis';
 import * as validate from '@midwayjs/validate';
+import * as bull from '@midwayjs/bull';
 import { sync } from 'read-pkg';
 
 import { DefaultErrorFilter } from './filter/default.filter';
@@ -38,6 +39,7 @@ import { registerModel } from './utils/register-model';
       component: crossDomain,
       enabledEnvironment: ['local'],
     },
+    bull,
   ],
   importConfigs: [join(__dirname, './config')],
 })

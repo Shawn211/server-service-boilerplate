@@ -52,4 +52,10 @@ export default {
     writeCookie: false,
     resolver: false,
   },
+  bull: {
+    // 默认的队列配置
+    defaultQueueOptions: {
+      redis: getRedisConfig(parseInt(process.env.REDIS_DB, 10)),
+    }
+  },
 };
