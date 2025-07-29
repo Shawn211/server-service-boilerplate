@@ -19,3 +19,26 @@ export class QuoteDTO {
   @Rule(RuleType.string().required())
   slippage: number;
 }
+
+export class SwapDTO {
+  @Rule(RuleType.string().required())
+  chain: string;
+
+  @Rule(RuleType.string().required())
+  inTokenAddress: string;
+
+  @Rule(RuleType.string().required())
+  outTokenAddress: string;
+
+  @Rule(RuleType.string().required())
+  slippage: number;
+
+  @Rule(RuleType.string().required())
+  amount: number;
+
+  @Rule(RuleType.string().required())
+  gasPrice: number;
+
+  @Rule(RuleType.string().required())
+  account: string;
+}

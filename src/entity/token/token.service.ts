@@ -3,7 +3,7 @@ import { RedisService } from '@midwayjs/redis';
 
 import { Network, NetworkModel } from '../common/network.entity';
 import { Token, TokenModel } from './token.entity';
-import { QuoteDTO } from './token.dto';
+import { QuoteDTO, SwapDTO } from './token.dto';
 
 type GasPriceResponse = {
   code: number,
@@ -21,7 +21,12 @@ type GasPriceResponse = {
 
 type QuoteResponse = {
   code: number,
-  data: any,
+  data: Record<string, any>,
+}
+
+type SwapResponse = {
+  code: number,
+  data: Record<string, any>,
 }
 
 @Provide()
@@ -83,5 +88,16 @@ export class TokenService {
 
     const quoteData: QuoteResponse = await quoteResponse.json();
     return quoteData.data;
+  }
+
+  async swap(swap: SwapDTO) {
+    const swapQuery = new URLSearchParams(swap as any as Record<string, string>).toString()
+    const swapResponse = await fetch(`${this.API_BASE_URL}/v4/${swap.chain}/swap?${swapQuery}`);
+    if (!swapResponse.ok) {
+      throw new MidwayHttpError(`HTTP error: ${swapResponse.status}`, 403, 'onchain_default');
+    }
+
+    const swapData: SwapResponse = await swapResponse.json();
+    return swapData.data;
   }
 }
