@@ -26,6 +26,7 @@ export class TokenProcessor implements IProcessor {
     return result;
   }
 
+  // todo 待完成针对多渠道商定时同步支持网络的支持 token 功能
   async execute() {
     const networks = await this.getNetworks();
     for (const network of networks) {

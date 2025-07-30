@@ -34,6 +34,7 @@ export class TradeService {
   @Inject()
   redisService: RedisService;
 
+  // todo 待优化成多渠道商支持
   async quote(quote: QuoteDTO) {
     if (!quote.gasPrice) {
       const gasPriceResponse = await fetch(`${this.API_BASE_URL}/v4/${quote.chain}/gasPrice`);

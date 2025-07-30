@@ -15,6 +15,7 @@ async function updateRedisCache(networks: Network[]) {
   await redis.set('networks:all', JSON.stringify(networks));
 }
 
+// todo 仅支持无 api 获取支持网络的 openocean，待补充支持多渠道商支持网络载入和 api 定时载入支持网络功能
 async function run() {
   // 1. 读取 networks.json
   const jsonPath = path.resolve(__dirname, './networks.json');
