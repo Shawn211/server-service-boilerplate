@@ -1,6 +1,7 @@
 import { IProcessor, Processor } from '@midwayjs/bull';
 import { FORMAT, Inject, MidwayError } from '@midwayjs/core';
 import { RedisService } from '@midwayjs/redis';
+import { createHash } from 'crypto';
 import { Network, NetworkModel } from '../entity/common/network.entity';
 import { Token, TokenModel } from '../entity/token/token.entity';
 
@@ -36,6 +37,15 @@ export class TokenProcessor implements IProcessor {
       }
 
       const tokenList: Token[] = await response.json();
+
+      // 网络支持 token 更新检测
+      const hash = createHash('md5').update(JSON.stringify(tokenList)).digest('hex');
+      const hashKey = `tokens:${network.chainCode}:hash`;
+      const cachedHash = await this.redisService.get(hashKey);
+      if (cachedHash === hash) {
+        continue;
+      }
+      await this.redisService.set(hashKey, hash);
 
       // 更新 mongodb
       const bulkOps = tokenList.map(token => ({
