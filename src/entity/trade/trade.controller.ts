@@ -1,4 +1,4 @@
-import { Controller, Inject, Post, Body } from '@midwayjs/core';
+import { Controller, Inject, Get, Post, Query, Body, SetHeader } from '@midwayjs/core';
 import { Context } from '@midwayjs/koa';
 
 import { QuoteDTO, SwapDTO } from './trade.dto';
@@ -12,9 +12,14 @@ export class TradeController {
   @Inject()
   service: TradeService;
 
-  @Post('/quote')
-  async quote(@Body() quote: QuoteDTO) {
-    return await this.service.quote(quote);
+  @Get('/quote')
+  @SetHeader({
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive',
+  })
+  async quote(@Query() quote: QuoteDTO) {
+    await this.service.quote(quote);
   }
 
   @Post('/swap')

@@ -1,4 +1,5 @@
 import { Provide, Inject, MidwayHttpError } from '@midwayjs/core';
+import { Context } from '@midwayjs/koa';
 import { RedisService } from '@midwayjs/redis';
 
 import { QuoteDTO, SwapDTO } from './trade.dto';
@@ -32,10 +33,22 @@ export class TradeService {
   private readonly API_BASE_URL = 'https://open-api.openocean.finance';
 
   @Inject()
+  ctx: Context;
+
+  @Inject()
   redisService: RedisService;
 
   // todo 待优化成多渠道商支持
   async quote(quote: QuoteDTO) {
+    this.ctx.req.on('close', () => {
+      // todo 待完善多渠道商询价场景下，客户端断连则终止未完成的询价请求
+    });
+    /**
+     * todo 多渠道商支持逻辑
+     * 1. 查询渠道商支持 token 表，获取支持当前询价 token 的多个渠道商配置
+     * 2. 根据配置对应进行请求询价，每个请求响应格式化统一结构后 SSE 推送
+     * 以下为单渠道商询价 SSE 推送逻辑
+     */
     if (!quote.gasPrice) {
       const gasPriceResponse = await fetch(`${this.API_BASE_URL}/v4/${quote.chain}/gasPrice`);
       if (!gasPriceResponse.ok) {
@@ -54,7 +67,7 @@ export class TradeService {
     }
 
     const quoteData: QuoteResponse = await quoteResponse.json();
-    return quoteData.data;
+    this.ctx.res.write(`data: ${JSON.stringify(quoteData.data)}\n\n`);
   }
 
   async swap(swap: SwapDTO) {
